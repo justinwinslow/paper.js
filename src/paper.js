@@ -31,7 +31,14 @@
  *
  */
 
-var paper = new function() {
+var paper;
+
+// Return module if AMD is supported
+if (typeof define !== 'undefined') {
+  define(function(){ return paper; });
+}
+
+paper = new function() {
 // Inline Bootstrap core (the Base class) inside the paper scope first:
 /*#*/ include('../lib/straps.js');
 
